@@ -1,5 +1,5 @@
-﻿
 
+using System;
 namespace CodeLou.CSharp.Week2.Challenge
 {
     class Program
@@ -16,7 +16,7 @@ namespace CodeLou.CSharp.Week2.Challenge
             // Hint: In Visual Studio, you can build the project by selecting "Build Solution" from the
             //       build menu, or by pressing <Ctrl>+<Shift>+B.
             Console.WriteLine("Welcome to the Code Louisville C# week 2 code challenge!");
-            Console.WriteLine("Press <Enter> to begin...")
+            Console.WriteLine("Press <Enter> to begin...");
             Console.ReadLine();
 
             Console.WriteLine("This is the launch application for the first human mission to Mars.");
@@ -26,6 +26,7 @@ namespace CodeLou.CSharp.Week2.Challenge
             // Capture the number of seconds that the user would like to count down before liftoff.
             // Hint: You should use another method of the Console class and store the output into a
             //       variable to use later.
+            var countDown = int32.Parse(Console.ReadLine());
 
 
             // Task 4:
@@ -34,8 +35,18 @@ namespace CodeLou.CSharp.Week2.Challenge
             // If the result is true, write "Please enter a positive number." to the console.
             // Hint: The input that you captured is currently a string type. You will have to "parse" it
             //       as a different type in order to pass it to the IsLessThanOrEqualToZero function.
-
-
+            if(IsLessThanOrEqualToZero(countDown))
+            {
+                Console.Write("Please enter a positive number.")
+            }
+            else
+            {
+                for(i=countDown; i >= 0; i--)
+                {
+                    Console.WriteLine("{0}. . .", i)
+                }
+                Console.WriteLine("LIFTOFF!")
+            }
             // Task 5:
             // Add an "else" block to the condition from Task 4. This should be run in the case that the
             // number is greater than zero. Write each number to the console, counting backwards, from the 
